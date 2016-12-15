@@ -1,0 +1,21 @@
+{
+  "termlista": {
+    "term": [
+      {
+        "gruppering": "parti",
+        "namn": "M",
+        "antal": "2"
+      },
+      {
+        "gruppering": "parti",
+        "namn": "S",
+        "antal": "3"
+      },
+      {
+        "gruppering": "parti",
+        "namn": "SD",
+        "antal": "1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Om DinRöst</title>
+		<link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+	</head>
+
+	<body>
+		<div id="container">
+			<div class="logotype">
+				
+				<a href="/"><img src="{{ url_for('static', filename='valen.gif')}}" title="Hem" id="logo" ></a>
+			</div>
+			<div id="header">
+					<div class="navbar" id="menu">
+						<ul>
+							<li class="current_page_item"><a href="/">Hem</a></li>
+							<li><a href="/omoss">Om oss</a></li>
+							<li><a href="/dokumentation">Dokumentation</a></li>
+						</ul>
+					</div>
+			</div>
+
+			<div id="wrapper">
+				
+				<div id="contents">
+				
+									<div id="docheader1">
+										<h1>API för Din Röst</h1>
+										<div class="docp">
+											<p>Din Rösts API ger dig som utvecklare kort information och 
+											åtkomst till Din Rösts data. API:et är utvecklad utifrån
+											<a href="http://sv.wikipedia.org/wiki/Representational_State_Transfer">RESTs</a> principer. All data hämtas via HTTP/GET 
+											och formatet är JSON och XML. Din Röst tillhandahåller inte någon 
+											ytterligare support till utvecklare utöver denna information. Inga licenser krävs för 
+											användning.</p>
+										</div>
+									</div>
+					
+									<div class="docheader2">
+										<h2>Endpoint</h2>
+										<div class="docp">
+											<p>Endpoints är det sista katalognamnet före sista och 
+											avslutande ”/v1/riksdagsinfo”. Allt efter detta är detsamma som en 
+											”identifikator”. </p>
+											<p>HTTP/GET anrop görs till:</p>
+											<span class="docbackground"><p>/v1/valkretsar</p></span>
+											<span class="docbackground"><p>/v1/partier</p></span>
+											<span class="docbackground"><p>/v1/ledamoter</p></span>
+											<span class="docbackground"><p>/v1/ledamotinfo</p></span>
+											<h3>Returnerar</h3>
+												<ul>
+													<li>Diagram som visar Sveriges alla riksdagsledamöter 
+													fördelade på respektive partitillhörighet</li>
+													<li>Lista över Sveriges  valkretsar. Varje valkrets 
+													är ’klickbar’ och länkar till en ny sida</li>
+												</ul>	
+										</div>
+									</div>
+					
+									<div class="docheader2">
+									<h2>Request parameters</h2>
+										<ul>
+											<li>Parti</li>
+												<ul>
+													<li>returnerar ett diagram över Sveriges 
+													riksdagsledamöter uppdelat på partitillhörighet 
+													(visas på indexsida)</li>
+													<li>returerar ett diagram över valkretsens 
+													riksdagsledamöter uppdelat på partitillhörighet.</li>
+												</ul>
+											<li>Valkrets</li>
+												<ul>
+													<li>returnerar en lista över valkretsar i Sverige 
+													(visas på indexsida). Varje valkrets är ’klickbar’</li>
+													<li>returnerar den valda valkretsen och de 
+													riksdagsledamöter som finns i denna valkrets. 
+													Varje riksdagsledamot är ’klickbar’.</li>
+												</ul>
+											<li>Ledamot</li>
+												<ul>
+													<li>returnerar information (namn, partitillhörighet, 
+													födelseår, kön, epost och titel)
+													</li>
+												</ul>
+										</ul>
+									<h3>Exempel på parametrar:</h3>
+										<span class="docbackground">
+										<p>'http://data.riksdagen.se/personlista/?termlista=valkrets&utformat=xml’</br>
+										'http://data.riksdagen.se/personlista/?fnamn={fnamn}&enamn={enamn}&utformat=json'</p></span>
+									</div>
+					
+				<div class="docheader2">
+					<h2>Exempel på request</h2>
+						<span class="docbackground"><p>GET /v1/index/data.riksdagen.se/personlista/?utformat=json&valkrets={Blekinge län}</p></span>
+					<h3>Responsse:</h3>
+						<div class="docbackground">
+<pre><code><p>{
+  "termlista": {
+	"term": [
+	  {
+		"gruppering": "parti",
+		"namn": "M",
+		"antal": "2"
+	  },
+	  {
+		"gruppering": "parti",
+		"namn": "S",
+		"antal": "3"
+	  },
+	  {
+		"gruppering": "parti",
+		"namn": "SD",
+		"antal": "1"
+	  }
+			]
+				}
+	}</p></code></pre>
+						</div>
+				</div>
+				
+								<div class="docheader2">
+									<h2>Felmeddelande</h2>
+									<h3>Svarskoden visas alltid på webbsidan.</h3>
+									<ul>
+									<li><strong>404</strong>&nbsp Not found!: Hoppsan, sidan kunde inte hittas!</li>
+									<li><strong>405</strong>&nbsp Method not allowed!: Metoden är inte tillåten.</li>
+									</ul>
+								</div>
+				</div>
+			
+				<div id="copyright">
+						<p>Proudly presented by  Michelle Tapper, Dina Eid Musalam &amp; Martina Cosic</p>
+				</div>
+			</div>
+
+		</div>
+</body>
+</html>

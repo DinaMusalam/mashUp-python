@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>DinRöst</title>
+    <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+    <script>
+  google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['Parti', 'Antal ledamöter'],
+        {% for parti in partier %}
+            ['{{ parti["namn"] }}', {{ parti["antal"] }}],
+        {% endfor %}
+        ]);
+        var options = {
+          chartArea: {left:"19%", height:"75%", width:"55%", top:"1%"},
+		  legend :{position:'bottom'}
+		  
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+
+<body>
+	<div id="container" >
+		<div class="logotype">
+			
+			<a href="/"><img src="{{ url_for('static', filename='valen.gif')}}" title="Hem" id="logo" ></a>
+		</div>
+		<div id="header">
+				<div class="navbar" id="menu">
+					<ul>
+						<li class="current_page_item"><a href="/">Hem</a></li>
+						<li><a href="/omoss">Om oss</a></li>
+						<li><a href="/dokumentation">Dokumentation</a></li>
+					</ul>
+				</div>
+		</div>
+		
+
+		<div id="wrapper">
+			<div class="information">
+				
+				<p>Snart är det dags att välja nya ledamöter till Sverige
+				Riksdag. Vill du göra din röst hörd, ta reda på mer information om en
+				specifik ledamot eller få svar på frågor som du funderar på? Kontakta en riksdagsledamot!<span><a href="/omoss" id="mer">&nbsp; Läs mer...</span></a> </p>
+			
+			</div>
+				
+		
+			<div id="sidebar">
+					<div class="title">
+						<h2>Valkretsar</h2>
+					</div>
+					
+					<div id="box">
+								
+						<div class="scroll">
+						<ul>
+							<li style="list-style: none">{% for krets in kretsar %}</li>
+							<li><a href="/valkrets/{{ krets}}">{{ krets }},</a></li>
+							<li style="list-style: none">{% endfor %}</li>
+						</ul>
+						</div>
+					</div>
+			</div>
+
+			<div class="paj">
+				<h2>Sveriges riksdagsledamöter/parti</h2>
+				<div id="piechart" style="width: 800px; height: 450px; padding-right:2px;"></div>
+			</div>
+		
+		
+			<div id="copyright">
+				<p>Proudly presented by Michelle Tapper, Dina Eid Musalam &amp; Martina Cosic</p>
+			</div>
+		</div>
+
+	</div>
+
+	
+
+</body>
+</html>

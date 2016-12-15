@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>DinRöst</title>
+    <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+    <script>
+  google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['Parti', 'Antal ledamöter'],
+        {% for kretsparti in partier %}
+            ['{{ kretsparti["namn"] }}', {{ kretsparti["antal"] }}],
+        {% endfor %}
+        ]);
+        var options = {
+          
+		  chartArea: {left:"19%", height:"68%", width:"55%", top:"0.5%"},
+		  legend :{position:'bottom'}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+
+<body>
+	<div id="container">
+		<div class="logotype">
+			
+			<a href="/"><img src="{{ url_for('static', filename='valen.gif')}}" title="Hem" id="logo" ></a>
+		</div>
+		<div id="header">
+				<div class="navbar" id="menu">
+					<ul>
+						<li class="current_page_item"><a href="/">Hem</a></li>
+						<li><a href="/omoss">Om oss</a></li>
+						<li><a href="/dokumentation">Dokumentation</a></li>
+					</ul>
+				</div>
+		</div>
+
+		<div id="wrapper">
+				<div id="tillbaka"><a href="/"> << Tillbaka till föregående sida</a>
+				</div>
+			<div class="information">
+				
+				<p>För att få mer information om en specifik ledamot i riksdagen - klicka på ett namn i listan.</p>
+				
+			</div>
+
+			<div class="paj">
+				<h2>Antal ledamöte i partier</h2>
+				<div id="piechart" style="width: 850px; height: 500px; padding-right:2px;"></div>
+			</div>
+
+			<div id="sidebar">
+					<div class="title">
+						<h2>Ledamöter</h2>
+					</div>
+					<div id="box">
+
+						<div class="scroll">
+							<ul>
+								<li style="list-style: none">{% for person in ledamoter %}</li>
+								<li><a href="/ledamot/{{ person['efternamn']}},{{person['tilltalsnamn'] }}">{{ person['sorteringsnamn']}}</a></li>
+								<li style="list-style: none">{% endfor %}</li>
+							</ul>
+						</div>
+					</div>
+			</div>
+			
+			<div id="copyright">
+				<p>Proudly presented by  Michelle Tapper, Dina Eid Musalam &amp; Martina Cosic</p>
+			</div>
+		</div>
+	</div>
+
+ 
+</body>
+</html>

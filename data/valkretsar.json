@@ -1,0 +1,152 @@
+{
+  "termlista": {
+    "term": [
+      {
+        "gruppering": "valkrets",
+        "namn": "Blekinge län",
+        "antal": "6",
+		"Url":"http://data.riksdagen.se/personlista/?valkrets=Blekinge+l%C3%A4n&utformat=json&termlista=parti"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Dalarnas län",
+        "antal": "11"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Gotlands län",
+        "antal": "2"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Gävleborgs län",
+        "antal": "12"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Göteborgs kommun",
+        "antal": "18"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Hallands län",
+        "antal": "12"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Jämtlands län",
+        "antal": "4"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Jönköpings län",
+        "antal": "13"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Kalmar län",
+        "antal": "9"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Kronobergs län",
+        "antal": "6"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Malmö kommun",
+        "antal": "10"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Norrbottens län",
+        "antal": "9"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Skåne läns norra och östra",
+        "antal": "12"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Skåne läns södra",
+        "antal": "13"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Skåne läns västra",
+        "antal": "10"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Stockholms kommun",
+        "antal": "29"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Stockholms län",
+        "antal": "38"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Södermanlands län",
+        "antal": "11"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Uppsala län",
+        "antal": "13"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Värmlands län",
+        "antal": "12"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Västerbottens län",
+        "antal": "11"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Västernorrlands län",
+        "antal": "9"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Västmanlands län",
+        "antal": "11"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Västra Götalands läns norra",
+        "antal": "12"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Västra Götalands läns södra",
+        "antal": "6"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Västra Götalands läns västra",
+        "antal": "13"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Västra Götalands läns östra",
+        "antal": "10"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Örebro län",
+        "antal": "12"
+      },
+      {
+        "gruppering": "valkrets",
+        "namn": "Östergötlands län",
+        "antal": "15"
+      }
+    ]
+  }
+}

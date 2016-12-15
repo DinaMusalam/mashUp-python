@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Om DinRöst</title>
+		<link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+	</head>
+
+	<body>
+		<div id="container">
+			<div class="logotype">
+				
+				<a href="/"><img src="{{ url_for('static', filename='valen.gif')}}" title="Hem" id="logo" ></a>
+			</div>
+			<div id="header">
+					<div class="navbar" id="menu">
+						<ul>
+							<li class="current_page_item"><a href="/">Hem</a></li>
+							<li><a href="/omoss">Om oss</a></li>
+							<li><a href="/dokumentation">Dokumentation</a></li>
+						</ul>
+					</div>
+			</div>
+
+			<div id="wrapper">
+				<div class="information">
+					<img src= "{{ url_for('static', filename='partier1.gif')}}" id="bild">
+				</div>
+				
+				<div id="contentsomoss">
+					<h2>Din Röst är en sida för dig som vill göra din röst hörd!</h2>
+					<p>Demokrati handlar om alla människors lika värde och rättigheter. Det
+					handlar också om möjligheten att vara med och påverka och bestämma.Att får rösta är en förutsättning 
+					för demokrati och det är också på detta sätt vi har möjlighet att påverka vem som ska företräda oss. 
+					Som röstberättigad har du möjlighet att välja vilka partier och personer som ska representera och företräda 
+					din röst i Sveriges rikdag, kommuner, landsting och i EU-parlamentet. </p>
+					<p>Din Röst riktar sig till dig som är intresserad av vem som idag representerar 
+					Sverige i vår riksdag. Här tillhandahålls information om vilka riksdagsledamöter
+					som är valda från våra 29 olika valkretsar. Detta tillsammans med kontaktinformation
+					och kort information om respektive ledamot ger dig möjlighet att personligen ta 
+					kontakt med den riksdagsledamot du är intresserad av, för att ställa frågor, få svar 
+					eller bara framföra din åsikt.</p>
+					<p><span id="italic">"Democracy is the government of the people, by the people, for the people" Abraham Lincoln.</span></p>
+				
+				</div>
+				
+				<div id="copyright">
+					<p>Proudly presented by  Michelle Tapper, Dina Eid Musalam &amp; Martina Cosic</p>
+				</div>
+			</div>
+		</div>
+
+    
+</body>
+</html>

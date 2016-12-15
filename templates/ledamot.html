@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>DinRöst</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+		
+    </head>
+    <body>
+		<div id="container">
+			<div class="logotype">
+				
+				<a href="/"><img src="{{ url_for('static', filename='valen.gif')}}" title="Hem" id="logo" ></a>
+			</div>
+			<div id="header">
+					<div class="navbar" id="menu">
+						<ul>
+							<li class="current_page_item"><a href="/">Hem</a></li>
+							<li><a href="/omoss">Om oss</a></li>
+							<li><a href="/dokumentation">Dokumentation</a></li>
+						</ul>
+					</div>
+			</div>
+				
+			<div id="wrapper">
+			<div id="tillbaka"><a href="/valkrets/{{ledamot['valkrets']}}"> << Tillbaka till föregående sida</a>
+			</div>
+				<div class="information">
+				
+				</div>
+		
+				<div id="ledamot">
+					<div id="ledamotsinfo">
+						<h2>{{ ledamot['tilltalsnamn'] }} {{ ledamot['efternamn'] }} ({{ ledamot['parti'] }})</h2>
+						<h3>{{ledamot['status']}}</h3>
+							<ul>
+								<li>Parti: {{ledamot['parti']}}</li>
+								<li>Valkrets: {{ledamot['valkrets']}} </li>
+								<li>Född: {{ledamot['fodd_ar']}}</li>
+								<li>Kön: {{ledamot['kon']}}</li>
+								<li>E-post: {{ email }}</li>
+								<li>Titel: {{title}}</li>
+							</ul>
+					</div>
+					
+					<div id="ledamotsbild">
+						<img src="{{ledamot['bild_url_192']}}" title="Bild" class="bild" />
+					</div>
+				</div>
+				
+				<div id="copyright">
+					<p>Proudly presented by  Michelle Tapper, Dina Eid Musalam &amp; Martina Cosic</p>
+				</div>
+				
+			</div>
+		</div>
+        
+    </body>
+</html>
